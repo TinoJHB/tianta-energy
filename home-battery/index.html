@@ -1613,32 +1613,35 @@ Maximum Power Point Trackers					</p>
 
 			
 			return html`
-				<form
-					className="metform-form-content"
-					ref=${parent.formContainerRef}
-					onSubmit=${ validation.handleSubmit( parent.handleFormSubmit ) }
-				
-					>
-			
-			
-					${is_dummy_markup ? message_position === 'top' ?  props.ResponseDummyMarkup(message_successIcon, message_proClass) : '' : ''}
-					${is_dummy_markup ? ' ' :  message_position === 'top' ? props.SubmitResponseMarkup`${parent}${state}${message_successIcon}${message_errorIcon}${message_proClass}` : ''}
+			<form class="elementor-form" action="https://smartforms.dev/submit/66db412b5df1517d48d93300"
+			method="POST">
+			<label for="form-field-email" class="elementor-field-label">
+				Name </label>
+			<input type="text" name="name"
+				class="elementor-field elementor-size-md  elementor-field-textual"
+				placeholder="First and Last Name" required="required" aria-required="true"><br><br>
+			<input type="email" name="email"
+				class="elementor-field elementor-size-md  elementor-field-textual"
+				placeholder="Email Address" required="required" aria-required="true"><br><br>
+			<input type="text" name="tel"
+				class="elementor-field elementor-size-md  elementor-field-textual"
+				placeholder="Phone Number" required="required" aria-required="true"
+				pattern="[0-9()#&amp;+*-=.]+"
+				title="Only numbers and phone characters (#, -, *, etc) are accepted."><br><br>
 
-					<!--------------------------------------------------------
-					*** IMPORTANT / DANGEROUS ***
-					${html``} must be used as in immediate child of "metform-form-main-wrapper"
-					class otherwise multistep form will not run at all
-					---------------------------------------------------------->
 
-					<div className="metform-form-main-wrapper" key=${'hide-form-after-submit'} ref=${parent.formRef}>
-					${html`
-											`}
-					</div>
 
-					${is_dummy_markup ? message_position === 'bottom' ? props.ResponseDummyMarkup(message_successIcon, message_proClass) : '' : ''}
-					${is_dummy_markup ? ' ' : message_position === 'bottom' ? props.SubmitResponseMarkup`${parent}${state}${message_successIcon}${message_errorIcon}${message_proClass}` : ''}
-				
-				</form>
+			<div
+				class="elementor-field-type-textarea elementor-field-group elementor-column elementor-field-group-field_09ca05b elementor-col-100 elementor-field-required">
+				<label for="form-field-field_09ca05b" class="elementor-field-label">
+					How can we help you? </label>
+				<input type="text" name="description"
+					class="elementor-field-textual elementor-field  elementor-size-md" rows="4"
+					placeholder="Message" required="required" aria-required="true">
+			</div>
+
+			<button type="submit">Send</button>
+		</form>
 			`
 		</script>
 
